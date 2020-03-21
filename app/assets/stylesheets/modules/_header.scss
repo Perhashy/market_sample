@@ -8,22 +8,25 @@
     padding-top: 15px;
     &__main{
       display: flex;
+      align-items: center;
       a{
         display: block;
         width: 140px;
         margin-right: 30px;
       }
       .form{
+        height: 36px;
         width: 100%;
         display: flex;
         &-input{
-          height: 36px;
           width: 100%;
         }
         &-submit{
-          padding: ８px;
+          padding: 7px;
           width: 36px;
-          // background-color: red;
+          background-color: red;
+          &-icon{
+          }
         }
       }
     }
