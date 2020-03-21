@@ -4,7 +4,7 @@
       %a{href: root_path}
         = image_tag "logo.svg", size: "140x40"
       = form_with(local: true, method: :get, class: "form") do |form|
-        = form.text_field :keyword, class: "form-input"
+        = form.text_field :keyword, placeholder: "キーワードから探す", class: "form-input"
         %button{type: "submit", class: "form-submit"}
           .form-submit-icon
             = image_tag "icon-search.svg", size: "20x20"
