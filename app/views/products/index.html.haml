@@ -2,9 +2,8 @@
   .header-item
     .header-item__main
       %a{href: root_path}
-        = image_tag "logo.svg"
-      .search
-        = form_with(local: true, method: :get) do |form|
-          = form.text_field :keyword
-          = form.submit
+        = image_tag "logo.svg", size: "140x40"
+      = form_with(local: true, method: :get, class: "form") do |form|
+        = form.text_field :keyword, class: "form-input"
+        = form.submit "検索", class: "form-submit"
     .header-item__nav
