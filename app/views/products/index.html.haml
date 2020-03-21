@@ -9,3 +9,9 @@
           .form-submit-icon
             = image_tag "icon-search.svg", size: "20x20"
     .header-item__nav
+      .header-item__nav--left
+        = link_to "カテゴリ"
+        = link_to "ブランド", "#", class: "brand"
+      .header-item__nav--right
+        = link_to "ログイン", "#"
+        = link_to "新規会員登録", "#"
