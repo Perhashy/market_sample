@@ -74,14 +74,12 @@
     }
     .shared-links{
       margin-top: 20px;
-      .link-signin{
-        font-size: 18px;
-        color: #3CCACE;
-      }
-      .link-password{
+      .link{
         font-size: 18px;
         color: #3CCACE;
       }
     }
   }
 }
+
+@import "footer";
