@@ -58,6 +58,14 @@ $theme-color: #3CCACE;
         &__input{
           @include input;
         }
+        &__birthday{
+          width: 100%;
+          select{
+            @include input(32%);
+            height: 46px;
+            background-color: #fff;
+          }
+        }
         &-box{
           display: flex;
           justify-content: space-between;
