@@ -4,12 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
-  validates :last_name, presence: true
-  validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
-  validates :birthday, presence: true
+  validates :nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday, presence: true
+
+  has_many :addresses
 
   # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]+\z/,
   #                              message: "には英小文字、英大文字、数字を全て含めてください。記号は使用できません。" },
