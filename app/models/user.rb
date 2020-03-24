@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :birthday, presence: true
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{7,64}+\z/,
-                               message: "には英小文字、英大文字、数字を全て含めてください。記号は使用できません。" },
-                     if: -> { new_record? || changes['encrypted_password'] }, allow_blank: true
+  # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]+\z/,
+  #                              message: "には英小文字、英大文字、数字を全て含めてください。記号は使用できません。" },
+  #                    if: -> { new_record? || changes['encrypted_password'] }, allow_blank: true
 end
