@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2020_03_24_062749) do
     t.string "building"
     t.string "phone_number"
     t.bigint "user_id"
+    t.bigint "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_addresses_on_prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
