@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
   root 'products#index'
   resources :products
+
+  match "*path" => "application#handle_404", via: :all
+
 end

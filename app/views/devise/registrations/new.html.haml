@@ -5,17 +5,18 @@
   .sign-main
     -# 以下保存先カラム名は仮置きです。
     = form_with model: @user, url: user_registration_path, local: true do |f|
-      = render "devise/shared/error_messages", resource: @user
       .sign-main-box
         %h1.sign-main-box__title ユーザー新規登録
         .field
           = f.label :ニックネーム, class: "field__text"
           %p.field__text-constraint 必須
           = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field__input", placeholder: "ニックネーム"
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "nickname"}
         .field
           = f.label :メールアドレス, class: "field__text"
           %p.field__text-constraint 必須
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "PC・携帯どちらでも可"
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "email"}
         .field
           = f.label :パスワード, class: "field__text"
           %p.field__text-constraint 必須
