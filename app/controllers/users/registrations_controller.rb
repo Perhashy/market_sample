@@ -32,6 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.addresses.build(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    root_path
   end
 
   # GET /resource/edit
