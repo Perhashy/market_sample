@@ -1,11 +1,11 @@
-.form
-  .form-header
+.sign
+  .sign-header
     %a{href: root_path}
       =image_tag "logo.svg"
-  .form-main
+  .sign-main
     = form_with model: @user, url: session_path(resource_name), local: true do |f|
-      .form-main-box
-        %h1.form-main-box__title ログイン
+      .sign-main-box
+        %h1.sign-main-box__title ログイン
         .field
           = f.label :メールアドレス, class: "field__text"
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "field__input"
