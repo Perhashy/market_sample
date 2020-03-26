@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_074728) do
+ActiveRecord::Schema.define(version: 2020_03_26_103023) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 2020_03_26_074728) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "genre", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
     t.bigint "product_id", null: false
@@ -36,10 +48,21 @@ ActiveRecord::Schema.define(version: 2020_03_26_074728) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "explain"
+    t.text "explain", null: false
     t.integer "price", null: false
+    t.bigint "category_id", null: false
+    t.integer "brand_id"
+    t.bigint "condition_id", null: false
+    t.bigint "deliveryday_id", null: false
+    t.bigint "prefecture_id", null: false
+    t.bigint "burden_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["burden_id"], name: "index_products_on_burden_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["condition_id"], name: "index_products_on_condition_id"
+    t.index ["deliveryday_id"], name: "index_products_on_deliveryday_id"
+    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
