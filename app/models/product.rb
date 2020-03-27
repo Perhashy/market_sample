@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  validates_associated :images
+  validates :images, presence: true
   validates :name, :price, :explain, :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id, presence: true
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
