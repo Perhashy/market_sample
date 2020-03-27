@@ -8,7 +8,7 @@
       = form_with model: @product, local: true do |f|
         .field
           .label
-            = f.label :image, "出品画像", class: "label__name"
+            = f.label :出品画像, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
           .field__sentence
@@ -22,12 +22,12 @@
         .box__border
         .field
           .label
-            = f.label :name, "商品名", class: "label__name"
+            = f.label :商品名, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "name"}
           = f.text_field :name, class: "input", placeholder: "40文字まで"
           .label
-            = f.label :explain, "商品の説明", class: "label__name"
+            = f.label :商品の説明, class: "label__name"
             %p.label__need 必須
           -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "explain"}
           = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
@@ -39,16 +39,16 @@
           .field__title
             商品の詳細
           .label
-            = f.label :genre, "カテゴリ", class: "label__name"
+            = f.label :カテゴリ, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
           = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
           .label
-            = f.label :name, "ブランド", class: "label__name"
+            = f.label :ブランド, class: "label__name"
             %p.label__need-blue 任意
-          = f.text_field :name, class: "input"
+          = f.text_field :brand_id, class: "input"
           .label
-            = f.label :image, "商品の状態", class: "label__name"
+            = f.label :商品の状態, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "condition_id"}
           = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択がありません"
@@ -59,17 +59,17 @@
             配送について
             .question ？
           .label
-            = f.label :image, "配送料の負担", class: "label__name"
+            = f.label :配送料の負担, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "burden_id"}
           = f.collection_select :burden_id, Burden.all, :id, :name, prompt: "選択がありません"
           .label
-            = f.label :image, "発送元の地域", class: "label__name"
+            = f.label :発送元の地域, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "prefecture_id"}
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択がありません"
           .label
-            = f.label :image, "発送までの日数", class: "label__name"
+            = f.label :発送までの日数, class: "label__name"
             %p.label__need 必須
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "deliveryday_id"}
           = f.collection_select :deliveryday_id, Deliveryday.all, :id, :name, prompt: "選択がありません"
@@ -80,9 +80,9 @@
             価格（¥300〜9,999,999）
             .question ？
           .label
-            = f.label :image, "販売価格", class: "label__name"
+            = f.label :販売価格, class: "label__name"
             %p.label__need 必須
-            = f.label :price, "¥", class: "mark"
+            = f.label :¥, class: "mark"
             = f.number_field :price, class: "price"
             -# = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
           .cost
